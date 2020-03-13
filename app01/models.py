@@ -32,7 +32,7 @@ class PricePolicy(models.Model):
     # obiect_id = models.CharField(verbose_name='关联表中数据行的ID')
     content_type = models.ForeignKey(ContentType, verbose_name='关联普通课或者学位课', on_delete=models.CASCADE)
     object_id = models.IntegerField(verbose_name='关联普通课或者学位课的课程ID')
-    # 帮助你快速实现content_type操作
+    # 帮助你快速实现content_type操作(快速查询，快速插入)
     content_object = GenericForeignKey('content_type', 'object_id')
 
 
